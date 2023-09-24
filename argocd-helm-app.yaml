@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-helm-webapp
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/pancheproshev/helm-webapp.git' # Replace with your repository URL
+    targetRevision: HEAD
+    path: webapp1 # Replace with the path to your Helm chart in the repository
+    helm:
+      valueFiles:
+        - values.yaml # If you have additional values file, specify here
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: 'default'
