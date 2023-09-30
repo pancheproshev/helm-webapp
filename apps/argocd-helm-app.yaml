@@ -14,7 +14,7 @@ spec:
         - values.yaml # If you have additional values file, specify here
       parameters:
         - name: configmap.data.CUSTOM_HEADER
-          value: "Edited custom header value by argocd app"
+          value: "Edited custom header value by argocd application"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'default'
