@@ -4,7 +4,7 @@ metadata:
   name: my-helm-webapp
   namespace: argocd
 spec:
-  project: app-of-apps
+  project: root-project
   source:
     repoURL: 'https://github.com/pancheproshev/helm-webapp.git' # Replace with your repository URL
     targetRevision: HEAD
