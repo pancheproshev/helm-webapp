@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-cm
+  namespace: argocd
+spec:
+  project: root-project
+  source:
+    repoURL: 'https://github.com/pancheproshev/helm-webapp.git'
+    targetRevision: HEAD
+    path: repositories/argocd-configmap.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
