@@ -9,6 +9,12 @@ spec:
     repoURL: 'https://github.com/pancheproshev/helm-webapp.git'
     targetRevision: HEAD
     path: apps/repositories/
+    passwordSecret:
+      name: repo-credentials
+      key: password
+    usernameSecret:
+      name: repo-credentials
+      key: username
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
