@@ -9,18 +9,22 @@ spec:
     repoURL: 'https://github.com/pancheproshev/helm-webapp.git' # Replace with your repository URL
     targetRevision: HEAD
     path: apps/webapp1/ # Replace with the path to your Helm chart in the repository
-    passwordSecret:
-      name: repo-credentials
-      key: password
-    usernameSecret:
-      name: repo-credentials
-      key: username
     helm:
       valueFiles:
         - values.yaml # If you have additional values file, specify here
       parameters:
         - name: configmap.data.CUSTOM_HEADER
           value: "Edited custom header value by argocd application"
+        - name: repo-credentials
+          valueFrom:
+            secretKeyRef:
+              name: repo-credentials
+              key: username
+        - name: repo-credentials
+          valueFrom:
+            secretKeyRef:
+              name: repo-credentials
+              key: password
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'default'
