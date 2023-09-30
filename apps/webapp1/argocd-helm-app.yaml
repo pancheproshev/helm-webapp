@@ -4,14 +4,17 @@ metadata:
   name: my-helm-webapp
   namespace: argocd
 spec:
-  project: default
+  project: app-of-apps
   source:
     repoURL: 'https://github.com/pancheproshev/helm-webapp.git' # Replace with your repository URL
     targetRevision: HEAD
     path: apps/webapp1/ # Replace with the path to your Helm chart in the repository
     helm:
       valueFiles:
-        - values.yaml # If you have additional values file, specify here
+        - apps/webapp1/values.yaml # If you have additional values file, specify here
+      parameters:
+        - name: configmap.data.CUSTOM_HEADER
+          value: "Edited custom header value by argocd app"
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'default'
