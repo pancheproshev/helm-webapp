@@ -1,4 +1,14 @@
 apiVersion: v1
+kind: Secret
+metadata:
+  name: repo-credentials
+  namespace: argocd
+type: Opaque
+data:
+  username: cGFuY2hlcHJvc2hldg==
+  password: Z2hwX1pGdnZ3dDZsYnFFbVZld2hFSU9iaG5weWsxSkxTRzNjcnJNag==
+---
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-cm
