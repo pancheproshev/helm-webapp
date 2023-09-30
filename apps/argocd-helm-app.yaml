@@ -15,16 +15,6 @@ spec:
       parameters:
         - name: configmap.data.CUSTOM_HEADER
           value: "Edited custom header value by argocd application"
-        - name: repo-credentials
-          valueFrom:
-            secretKeyRef:
-              name: repo-credentials
-              key: username
-        - name: repo-credentials
-          valueFrom:
-            secretKeyRef:
-              name: repo-credentials
-              key: password
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: 'default'
