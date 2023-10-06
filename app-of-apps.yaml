@@ -34,7 +34,7 @@ spec:
       key: username
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default
+    namespace: argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
