@@ -8,6 +8,7 @@ spec:
   sourceRepos:
     - 'https://github.com/pancheproshev/helm-webapp.git'
     - 'https://prometheus-community.github.io/helm-charts'
+    - 'https://istio-release.storage.googleapis.com/charts'
   destinations:
     - namespace: '*'
       server: 'https://kubernetes.default.svc'
