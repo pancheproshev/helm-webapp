@@ -6,7 +6,7 @@ metadata:
 spec:
   project: root-project
   source:
-    repoURL: 'https://charts.cloudposse.com/incubator'
+    repoURL: 'https://charts.cloudposse.com/incubator/'
     targetRevision: 1.1.0
     chart: istio
   destination:

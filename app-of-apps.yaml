@@ -8,7 +8,7 @@ spec:
   sourceRepos:
     - 'https://github.com/pancheproshev/helm-webapp.git'
     - 'https://prometheus-community.github.io/helm-charts'
-    - 'https://charts.cloudposse.com/incubator'
+    - 'https://charts.cloudposse.com/incubator/'
   destinations:
     - namespace: '*'
       server: 'https://kubernetes.default.svc'
