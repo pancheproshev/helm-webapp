@@ -1,14 +1,56 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: istio-base
   namespace: argocd
 spec:
   project: root-project
   source:
-    repoURL: 'https://charts.cloudposse.com/incubator/'
-    targetRevision: 1.1.0
-    chart: istio
+    repoURL: 'https://istio-release.storage.googleapis.com/charts'
+    targetRevision: 1.17.2
+    chart: base
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: istio-system
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: 
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istiod
+  namespace: argocd
+spec:
+  project: root-project
+  source:
+    repoURL: 'https://istio-release.storage.googleapis.com/charts'
+    targetRevision: 1.17.2
+    chart: istiod
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: istio-system
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+    automated: 
+      prune: true
+      selfHeal: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio-gateway
+  namespace: argocd
+spec:
+  project: root-project
+  source:
+    repoURL: 'https://istio-release.storage.googleapis.com/charts'
+    targetRevision: 1.17.2
+    chart: gateway
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: istio-system
