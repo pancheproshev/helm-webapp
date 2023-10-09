@@ -1,2 +1,1 @@
-servicename=$(k get svc -l "app=myhelmapp" -o jsonpath="{.items[0].metadata.name}")
-k port-forward service/myhelmapp 8888:80 --namespace default
+minikube tunnel
