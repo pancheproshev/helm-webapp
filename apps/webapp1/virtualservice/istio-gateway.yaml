@@ -15,3 +15,4 @@ spec:
     - "argocd.internal"
     - "app1.internal"
     - "grafana.internal"
+    - "prometheus.internal"
