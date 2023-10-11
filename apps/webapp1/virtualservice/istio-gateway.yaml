@@ -14,3 +14,4 @@ spec:
     hosts:
     - "argocd.internal"
     - "app1.internal"
+    - "grafana.internal"
