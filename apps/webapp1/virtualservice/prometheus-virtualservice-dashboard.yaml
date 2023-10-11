@@ -12,5 +12,5 @@ spec:
   - route:
     - destination:
         port:
-          number: 8080
+          number: 9090
         host: prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local
