@@ -13,4 +13,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: prometheus-prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local
+        host: prometheus-grafana.prometheus.svc.cluster.local
