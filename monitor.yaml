@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: app1-monitor
+  namespace: default
+  labels:
+    release: prometheus  # This should match the label of your Prometheus Operator setup
+spec:
+  selector:
+    matchLabels:
+      app: myhelmapp
+  namespaceSelector:
+    matchNames:
+    - default
+  endpoints:
+  - port: "80"
