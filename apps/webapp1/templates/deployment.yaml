@@ -17,6 +17,7 @@ spec:
         app: {{.Values.appName}}
         tier: frontend
         version: v1
+        istio-injection: enabled
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec: # Pod spec
