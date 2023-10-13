@@ -16,3 +16,4 @@ spec:
     - "app1.internal"
     - "grafana.internal"
     - "prometheus.internal"
+    - "kiali.internal"
