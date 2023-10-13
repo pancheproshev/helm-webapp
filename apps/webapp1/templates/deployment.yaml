@@ -16,6 +16,7 @@ spec:
       labels:
         app: {{.Values.appName}}
         tier: frontend
+        version: v1
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec: # Pod spec
